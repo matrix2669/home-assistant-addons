@@ -1,0 +1,27 @@
+name: IPv6 Proxy Monitor
+slug: ipv6_proxy_monitor
+description: Monitor an IPv6 trusted-proxy network and request administrator approval before updating it.
+version: 0.1.0
+url: https://github.com/matrix2669/home-assistant-addons/tree/main/ipv6_proxy_monitor
+arch:
+  - amd64
+  - aarch64
+startup: application
+stage: experimental
+boot: auto
+init: true
+homeassistant: "2026.10.0"
+homeassistant_api: true
+ingress: true
+ingress_port: 8099
+panel_icon: mdi:router-network
+panel_title: IPv6 Proxy Monitor
+panel_admin: true
+options:
+  hostname: ""
+  cidr: 128
+  recheck_interval: 5
+schema:
+  hostname: str
+  cidr: int(1,128)
+  recheck_interval: int(1,1440)
