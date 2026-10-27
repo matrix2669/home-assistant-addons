@@ -216,7 +216,8 @@ class RuntimeTests(unittest.IsolatedAsyncioTestCase):
                 self.assertEqual(len(received), 1)
                 self.assertEqual(attempts, 2)  # first service failure was retried next poll
                 body = received[0][1]
-                self.assertIn("/hassio/ingress/repo_hash_ipv6_proxy_monitor", body["message"])
+                self.assertIn("[Open review](/app/repo_hash_ipv6_proxy_monitor)", body["message"])
+                self.assertNotIn("/hassio/ingress/", body["message"])
                 self.assertNotIn("never-logged-test-token", body["message"])
                 runtime.options = {"hostname": "proxy.example", "cidr": 64}
                 runtime.store = runtime.store_factory(root / "state.json")

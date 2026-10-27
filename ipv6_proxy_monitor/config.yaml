@@ -1,7 +1,7 @@
 name: IPv6 Proxy Monitor
 slug: ipv6_proxy_monitor
 description: Monitor an IPv6 trusted-proxy network and request administrator approval before updating it.
-version: 0.1.0
+version: 0.1.1
 url: https://github.com/matrix2669/home-assistant-addons/tree/main/ipv6_proxy_monitor
 arch:
   - amd64

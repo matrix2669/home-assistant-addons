@@ -3,11 +3,11 @@
 ## ADR-001: Standalone app and explicit review workflow
 
 - Status: Accepted; 2026-10-26.
-- Decision: Build a standalone app in this public multi-app repository, first under `ipv6_proxy_monitor/`. Detect IPv6 network changes and notify an administrator with a relative internal Ingress link. The user reviews hostname, prefix, old and proposed networks, then explicitly chooses **Apply and restart**. The app does not automatically restart HA or confirm its pending settings. The administrator must manually confirm HA's HTTP settings within five minutes; HA rollback/restart behavior is authoritative.
+- Decision: Build a standalone app in this public multi-app repository, first under `ipv6_proxy_monitor/`. Detect IPv6 network changes and notify an administrator with a relative Home Assistant app-page link (`/app/<slug>`), using the discovered app slug. The app request UI remains behind Supervisor Ingress. The user reviews hostname, prefix, old and proposed networks, then explicitly chooses **Apply and restart**. The app does not automatically restart HA or confirm its pending settings. The administrator must manually confirm HA's HTTP settings within five minutes; HA rollback/restart behavior is authoritative.
 - Reason: A destructive HTTP configuration change must remain visible and user-controlled. A separate HACS companion is out of scope.
 - Alternatives rejected: automatic application/restart, companion integration, and direct YAML or `.storage` editing.
 - Consequences: HA may restart only after a fresh explicit approval; review UI and durable state must survive that restart. No promotion call is ever made.
-- Provenance: operator-approved project specification supplied 2026-10-26; initial repository commit `68e0c485db6c83724ea3936a6a4c1851796f4659`.
+- Provenance: operator-approved project specification supplied 2026-10-26; operator-approved notification-route correction 2026-10-27, verified against Home Assistant frontend commit `3fe979408adee937284423dbbc3bc43fe4974372`; initial repository commit `68e0c485db6c83724ea3936a6a4c1851796f4659`.
 
 ## ADR-002: DNS candidate selection
 

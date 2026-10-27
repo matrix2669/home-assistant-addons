@@ -321,7 +321,7 @@ class Runtime:
             token = self.token_provider()
             if not slug or not token or not self.session:
                 return False
-            ingress_url = f"/hassio/ingress/{quote(slug, safe='')}"
+            ingress_url = f"/app/{quote(slug, safe='')}"
             body = {"notification_id": NOTIFICATION_ID, "title": title,
                     "message": f"{message}\n\n[Open review]({ingress_url})"}
             try:

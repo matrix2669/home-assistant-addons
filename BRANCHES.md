@@ -10,6 +10,8 @@ Git hosting is authoritative for remote refs; this is the local intent record.
 
 ## `feature/ipv6-proxy-monitor`
 
+- 2026-10-27: fixes the persistent notification review route to `/app/<slug>` and aligns the experimental package version to 0.1.1; based on freshly fetched remote feature head `da8cce01597dfcd45bf4f6fd2ef9313a21f2ba94`. All 24 unit tests passed after the change.
+
 - Purpose: publish initial source for an independently installed Home Assistant app that detects a changed IPv6 trusted-proxy network and asks an administrator before configuring HTTP settings.
 - Scope: app source, tests, docs, governance, and local CI only.
 - Project scope: source, tests, docs, governance, and local CI. An approved isolated feature-branch checkpoint commit/push is permitted; this does not authorize installation, deployment, live Home Assistant mutation, releases, promotion, or image publishing.
